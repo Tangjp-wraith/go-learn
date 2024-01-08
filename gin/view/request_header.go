@@ -33,5 +33,12 @@ func main() {
 		c.JSON(0, gin.H{"data": "fmy"})
 	})
 
+	// 设置响应头
+	router.GET("/res", func(c *gin.Context) {
+		c.Header("token", "tjp run after gyc")
+		c.Header("Content-Type", "application/text; charset=utf-8")
+		c.JSON(200, gin.H{"data": "success"})
+	})
+
 	router.Run("127.0.0.1:8088")
 }
